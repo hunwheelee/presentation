@@ -10,18 +10,20 @@
     --scarlet: #BB0000;
     --scarlet-deep: #8B0000;
     --scarlet-soft: #d63838;
+    --osu-gray: #5a5a5a;
+    --osu-gray-deep: #3f3f3f;
     --gray-dark: #1a1a1a;
-    --gray-mid: #555;
-    --gray-soft: #8a8a8a;
-    --gray-faint: #b8b0a6;
-    --paper: #faf8f5;
-    --paper-warm: #f3efe8;
-    --paper-deep: #ebe4d7;
+    --gray-mid: #4a4a4a;
+    --gray-soft: #7a7a7a;
+    --gray-faint: #b0b0b0;
+    --paper: #fbfaf6;
+    --paper-warm: #f4f1e9;
+    --paper-deep: #ebe5d6;
     --ink: #14110d;
-    --rule: #e5ddd2;
-    --accent: #c9a96e;
-    --bright: #2a5d9c;
-    --bright-soft: #4a7cb8;
+    --rule: #e2dccf;
+    --accent: #b89c5e;
+    --bright: #5a5a5a;
+    --bright-soft: #757575;
     --display: 'Fraunces', Georgia, serif;
     --body: 'Inter Tight', -apple-system, sans-serif;
     --mono: 'JetBrains Mono', monospace;
@@ -115,20 +117,18 @@
 
   /* ============ SLIDE 1: TITLE ============ */
   .s-title {
-    background:
-      radial-gradient(ellipse at top right, rgba(187,0,0,0.05), transparent 60%),
-      linear-gradient(135deg, var(--paper) 0%, var(--paper-warm) 100%);
+    background: var(--paper);
   }
   .s-title .vline {
     position: absolute;
     left: 80px;
-    top: 110px;
-    bottom: 110px;
-    width: 2px;
+    top: 130px;
+    bottom: 130px;
+    width: 1.5px;
     background: var(--scarlet);
   }
   .s-title .title-wrap {
-    margin-left: 110px;
+    margin-left: 115px;
     margin-right: 80px;
     display: flex;
     flex-direction: column;
@@ -136,19 +136,11 @@
     height: 100%;
     gap: 28px;
   }
-  .s-title .pretitle {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    color: var(--scarlet);
-    font-weight: 500;
-  }
   .s-title h1 {
     font-family: var(--display);
     font-weight: 400;
-    font-size: 58px;
-    line-height: 1.05;
+    font-size: 56px;
+    line-height: 1.08;
     letter-spacing: -0.025em;
     color: var(--ink);
     max-width: 920px;
@@ -160,15 +152,17 @@
   }
   .s-title .subtitle {
     font-family: var(--display);
-    font-size: 22px;
+    font-size: 21px;
     font-weight: 300;
     font-style: italic;
     color: var(--gray-mid);
-    line-height: 1.4;
+    line-height: 1.45;
     max-width: 820px;
   }
   .s-title .author-block {
-    margin-top: 18px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
     display: flex;
     gap: 60px;
     align-items: baseline;
@@ -183,13 +177,7 @@
     font-size: 13px;
     color: var(--gray-mid);
     letter-spacing: 0.02em;
-  }
-  .s-title .venue {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gray-soft);
+    margin-top: 2px;
   }
 
   /* ============ SLIDE 2: MOTIVATION ============ */
@@ -268,44 +256,40 @@
   .s-puzzle {
     background: var(--paper);
   }
-  .s-puzzle .big-q {
+  .s-puzzle .content {
+    align-items: center;
     text-align: center;
-    margin-top: 20px;
+    justify-content: center;
   }
-  .s-puzzle .big-q .qmark {
-    font-family: var(--display);
-    font-size: 180px;
-    font-weight: 300;
+  .s-puzzle .rq-label {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
     color: var(--scarlet);
-    line-height: 1;
-    opacity: 0.18;
+    margin-bottom: 28px;
+    font-weight: 500;
   }
-  .s-puzzle .big-q h1 {
+  .s-puzzle .rq-rule {
+    width: 60px;
+    height: 1.5px;
+    background: var(--scarlet);
+    margin-bottom: 38px;
+  }
+  .s-puzzle h1 {
     font-family: var(--display);
     font-weight: 300;
-    font-size: 52px;
-    line-height: 1.1;
+    font-size: 44px;
+    line-height: 1.2;
     letter-spacing: -0.02em;
     color: var(--ink);
-    margin-top: -110px;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    text-align: center;
   }
-  .s-puzzle .big-q h1 em {
+  .s-puzzle h1 em {
     font-style: italic;
     color: var(--scarlet);
-  }
-  .s-puzzle .big-q .gloss {
-    font-family: var(--display);
-    font-size: 18px;
-    font-style: italic;
-    color: var(--gray-mid);
-    margin-top: 30px;
-    max-width: 660px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
+    font-weight: 400;
   }
 
   /* ============ SLIDE 4: THEORY ============ */
@@ -317,33 +301,20 @@
   }
   .theory-card {
     background: var(--paper-warm);
-    padding: 32px 30px;
-    border-top: 3px solid var(--scarlet);
+    padding: 28px 32px 30px;
+    border-top: 2px solid var(--scarlet);
     position: relative;
   }
   .theory-card.alt {
-    border-top-color: var(--accent);
+    border-top-color: var(--osu-gray);
   }
-  .theory-card .num {
-    position: absolute;
-    top: -1px;
-    right: 20px;
-    background: var(--paper);
-    padding: 6px 10px;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    color: var(--scarlet);
-    font-weight: 500;
-  }
-  .theory-card.alt .num { color: var(--accent); }
   .theory-card h3 {
     font-family: var(--display);
     font-weight: 500;
-    font-size: 22px;
+    font-size: 21px;
     color: var(--ink);
     margin-bottom: 12px;
-    line-height: 1.2;
+    line-height: 1.25;
   }
   .theory-card p {
     font-size: 14px;
@@ -356,7 +327,9 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gray-soft);
-    margin-top: 16px;
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
   }
   .conjunction {
     text-align: center;
@@ -562,11 +535,13 @@
   }
   .plot-title {
     font-family: var(--display);
-    font-size: 14px;
-    font-style: italic;
-    color: var(--gray-mid);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
   }
 
   /* ============ SLIDE 12: SUMMARY ACROSS STUDIES ============ */
@@ -625,20 +600,21 @@
   }
   .contrib-item {
     display: grid;
-    grid-template-columns: 70px 1fr;
-    gap: 30px;
-    align-items: start;
-    padding-bottom: 20px;
+    grid-template-columns: 50px 1fr;
+    gap: 28px;
+    align-items: baseline;
+    padding-bottom: 18px;
     border-bottom: 1px solid var(--rule);
   }
   .contrib-item:last-child { border-bottom: none; }
   .contrib-num {
     font-family: var(--display);
-    font-size: 48px;
-    font-weight: 300;
+    font-size: 28px;
+    font-weight: 400;
     color: var(--scarlet);
-    line-height: 0.9;
+    line-height: 1;
     font-style: italic;
+    letter-spacing: 0.02em;
   }
   .contrib-body h4 {
     font-family: var(--display);
@@ -851,7 +827,6 @@
     </div>
     <div class="vline"></div>
     <div class="title-wrap">
-      <div class="pretitle">Conference Presentation · 15 min</div>
       <h1>The Paradox of <em>Structural Empowerment</em></h1>
       <div class="subtitle">
         How and when empowering organizational structures fuel psychological entitlement
@@ -915,10 +890,9 @@
       <div>What if empowerment doesn't always enable?</div>
     </div>
     <div class="content">
-      <div class="big-q">
-        <div class="qmark">?</div>
-        <h1>What if structural empowerment, for some employees, <em>reduces</em> resource sharing — the very behavior it was designed to promote?</h1>
-      </div>
+      <div class="rq-label">Research Question</div>
+      <div class="rq-rule"></div>
+      <h1>What if structural empowerment, for some employees, <em>reduces</em> resource sharing — the very behavior it was designed to promote?</h1>
     </div>
     <div class="chrome-bottom">
       <div>The Paradox of Structural Empowerment</div>
@@ -942,7 +916,6 @@
       </div>
       <div class="theory-grid">
         <div class="theory-card">
-          <div class="num">A</div>
           <h3>Evolutionary perspective on work design</h3>
           <p>
             Modern work structures pose adaptive challenges; psychological responses to
@@ -952,7 +925,6 @@
           <div class="citer">Nicholson 2010 · van Vugt et al. 2024 · Pitesa &amp; Thau 2018</div>
         </div>
         <div class="theory-card alt">
-          <div class="num">B</div>
           <h3>Dominance–prestige model</h3>
           <p>
             People pursue social rank through two distinct strategies: <strong>dominance</strong>
@@ -1159,40 +1131,48 @@
         </div>
         <div class="right">
           <div class="plot-wrap">
-            <div class="plot-title">Figure 2 · Interaction predicting psychological entitlement</div>
+            <div class="plot-title">Interaction predicting psychological entitlement</div>
             <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
-              <!-- axes -->
-              <line x1="60" y1="40" x2="60" y2="260" stroke="#1a1a1a" stroke-width="1"/>
-              <line x1="60" y1="260" x2="440" y2="260" stroke="#1a1a1a" stroke-width="1"/>
-              <!-- y ticks -->
-              <text x="50" y="265" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">1.0</text>
-              <text x="50" y="190" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">2.0</text>
-              <text x="50" y="115" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">3.0</text>
-              <line x1="58" y1="190" x2="62" y2="190" stroke="#1a1a1a"/>
-              <line x1="58" y1="115" x2="62" y2="115" stroke="#1a1a1a"/>
+              <!-- Subtle horizontal gridlines -->
+              <line x1="70" y1="80" x2="430" y2="80" stroke="#e5ddd2" stroke-width="0.6" stroke-dasharray="3 3"/>
+              <line x1="70" y1="150" x2="430" y2="150" stroke="#e5ddd2" stroke-width="0.6" stroke-dasharray="3 3"/>
+              <line x1="70" y1="220" x2="430" y2="220" stroke="#e5ddd2" stroke-width="0.6" stroke-dasharray="3 3"/>
 
-              <!-- x labels -->
-              <text x="130" y="280" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#555">Low SE</text>
-              <text x="370" y="280" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#555">High SE</text>
+              <!-- Axes -->
+              <line x1="70" y1="40" x2="70" y2="260" stroke="#1a1a1a" stroke-width="1.4"/>
+              <line x1="70" y1="260" x2="430" y2="260" stroke="#1a1a1a" stroke-width="1.4"/>
 
-              <!-- y axis label -->
-              <text x="20" y="155" font-family="Fraunces" font-style="italic" font-size="11" fill="#555" transform="rotate(-90 20 155)">Psychological Entitlement</text>
+              <!-- Y-axis tick labels -->
+              <text x="62" y="265" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#555">1.0</text>
+              <text x="62" y="225" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#555">1.5</text>
+              <text x="62" y="155" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#555">2.0</text>
+              <text x="62" y="85" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#555">2.5</text>
+              <line x1="67" y1="220" x2="73" y2="220" stroke="#1a1a1a"/>
+              <line x1="67" y1="150" x2="73" y2="150" stroke="#1a1a1a"/>
+              <line x1="67" y1="80" x2="73" y2="80" stroke="#1a1a1a"/>
 
-              <!-- High dominance line (red, rising) -->
-              <line x1="130" y1="190" x2="370" y2="120" stroke="#BB0000" stroke-width="2.5"/>
-              <circle cx="130" cy="190" r="5" fill="#BB0000"/>
-              <circle cx="370" cy="120" r="5" fill="#BB0000"/>
-              <text x="380" y="115" font-family="Fraunces" font-size="11" font-style="italic" fill="#BB0000">High Dominance</text>
+              <!-- X-axis labels -->
+              <text x="140" y="282" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#555">Low SE</text>
+              <text x="380" y="282" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#555">High SE</text>
 
-              <!-- Low dominance line (blue, falling) -->
-              <line x1="130" y1="180" x2="370" y2="225" stroke="#2a5d9c" stroke-width="2.5" stroke-dasharray="5 3"/>
-              <circle cx="130" cy="180" r="5" fill="#2a5d9c"/>
-              <circle cx="370" cy="225" r="5" fill="#2a5d9c"/>
-              <text x="380" y="230" font-family="Fraunces" font-size="11" font-style="italic" fill="#2a5d9c">Low Dominance</text>
+              <!-- Y-axis label rotated and centered at y-midpoint (y=150) -->
+              <text x="22" y="150" text-anchor="middle" font-family="Fraunces" font-style="italic" font-size="15" font-weight="500" fill="#1a1a1a" transform="rotate(-90 22 150)">Psychological Entitlement</text>
 
-              <!-- Significance markers -->
-              <text x="250" y="135" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#BB0000">b = .14, p = .047</text>
-              <text x="250" y="215" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#2a5d9c">b = −.15, p = .031</text>
+              <!-- High dominance line -->
+              <line x1="140" y1="200" x2="380" y2="125" stroke="#BB0000" stroke-width="3"/>
+              <circle cx="140" cy="200" r="6" fill="#BB0000"/>
+              <circle cx="380" cy="125" r="6" fill="#BB0000"/>
+              <text x="392" y="123" font-family="Fraunces" font-size="13" font-style="italic" font-weight="500" fill="#BB0000">High Dom.</text>
+
+              <!-- Low dominance line -->
+              <line x1="140" y1="188" x2="380" y2="232" stroke="#5a5a5a" stroke-width="3" stroke-dasharray="6 4"/>
+              <circle cx="140" cy="188" r="6" fill="#5a5a5a"/>
+              <circle cx="380" cy="232" r="6" fill="#5a5a5a"/>
+              <text x="392" y="236" font-family="Fraunces" font-size="13" font-style="italic" font-weight="500" fill="#5a5a5a">Low Dom.</text>
+
+              <!-- Significance annotations -->
+              <text x="260" y="145" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#BB0000">b = .14, p = .047</text>
+              <text x="260" y="222" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#5a5a5a">b = −.15, p = .031</text>
             </svg>
           </div>
         </div>
@@ -1245,31 +1225,48 @@
         </div>
         <div class="right">
           <div class="plot-wrap">
-            <div class="plot-title">Figure 3 · Replication of dominance interaction (Study 2)</div>
+            <div class="plot-title">Replicating the dominance interaction</div>
             <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
-              <line x1="60" y1="40" x2="60" y2="260" stroke="#1a1a1a" stroke-width="1"/>
-              <line x1="60" y1="260" x2="440" y2="260" stroke="#1a1a1a" stroke-width="1"/>
-              <text x="50" y="265" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">1.0</text>
-              <text x="50" y="190" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">2.0</text>
-              <text x="50" y="115" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">3.0</text>
-              <line x1="58" y1="190" x2="62" y2="190" stroke="#1a1a1a"/>
-              <line x1="58" y1="115" x2="62" y2="115" stroke="#1a1a1a"/>
-              <text x="130" y="280" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#555">Low SE</text>
-              <text x="370" y="280" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#555">High SE</text>
-              <text x="20" y="155" font-family="Fraunces" font-style="italic" font-size="11" fill="#555" transform="rotate(-90 20 155)">Psychological Entitlement</text>
+              <!-- Subtle horizontal gridlines -->
+              <line x1="70" y1="80" x2="430" y2="80" stroke="#e5ddd2" stroke-width="0.6" stroke-dasharray="3 3"/>
+              <line x1="70" y1="150" x2="430" y2="150" stroke="#e5ddd2" stroke-width="0.6" stroke-dasharray="3 3"/>
+              <line x1="70" y1="220" x2="430" y2="220" stroke="#e5ddd2" stroke-width="0.6" stroke-dasharray="3 3"/>
 
-              <line x1="130" y1="200" x2="370" y2="105" stroke="#BB0000" stroke-width="2.5"/>
-              <circle cx="130" cy="200" r="5" fill="#BB0000"/>
-              <circle cx="370" cy="105" r="5" fill="#BB0000"/>
-              <text x="380" y="100" font-family="Fraunces" font-size="11" font-style="italic" fill="#BB0000">High Dominance</text>
+              <!-- Axes -->
+              <line x1="70" y1="40" x2="70" y2="260" stroke="#1a1a1a" stroke-width="1.4"/>
+              <line x1="70" y1="260" x2="430" y2="260" stroke="#1a1a1a" stroke-width="1.4"/>
 
-              <line x1="130" y1="175" x2="370" y2="240" stroke="#2a5d9c" stroke-width="2.5" stroke-dasharray="5 3"/>
-              <circle cx="130" cy="175" r="5" fill="#2a5d9c"/>
-              <circle cx="370" cy="240" r="5" fill="#2a5d9c"/>
-              <text x="380" y="245" font-family="Fraunces" font-size="11" font-style="italic" fill="#2a5d9c">Low Dominance</text>
+              <!-- Y-axis tick labels -->
+              <text x="62" y="265" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#555">1.0</text>
+              <text x="62" y="225" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#555">1.5</text>
+              <text x="62" y="155" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#555">2.0</text>
+              <text x="62" y="85" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#555">2.5</text>
+              <line x1="67" y1="220" x2="73" y2="220" stroke="#1a1a1a"/>
+              <line x1="67" y1="150" x2="73" y2="150" stroke="#1a1a1a"/>
+              <line x1="67" y1="80" x2="73" y2="80" stroke="#1a1a1a"/>
 
-              <text x="250" y="120" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#BB0000">b = .34, p = .048</text>
-              <text x="250" y="225" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#2a5d9c">b = −.36, p = .063</text>
+              <!-- X-axis labels -->
+              <text x="140" y="282" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#555">Low SE</text>
+              <text x="380" y="282" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#555">High SE</text>
+
+              <!-- Y-axis label rotated and centered -->
+              <text x="22" y="150" text-anchor="middle" font-family="Fraunces" font-style="italic" font-size="15" font-weight="500" fill="#1a1a1a" transform="rotate(-90 22 150)">Psychological Entitlement</text>
+
+              <!-- High dominance line -->
+              <line x1="140" y1="210" x2="380" y2="100" stroke="#BB0000" stroke-width="3"/>
+              <circle cx="140" cy="210" r="6" fill="#BB0000"/>
+              <circle cx="380" cy="100" r="6" fill="#BB0000"/>
+              <text x="392" y="98" font-family="Fraunces" font-size="13" font-style="italic" font-weight="500" fill="#BB0000">High Dom.</text>
+
+              <!-- Low dominance line -->
+              <line x1="140" y1="180" x2="380" y2="240" stroke="#5a5a5a" stroke-width="3" stroke-dasharray="6 4"/>
+              <circle cx="140" cy="180" r="6" fill="#5a5a5a"/>
+              <circle cx="380" cy="240" r="6" fill="#5a5a5a"/>
+              <text x="392" y="244" font-family="Fraunces" font-size="13" font-style="italic" font-weight="500" fill="#5a5a5a">Low Dom.</text>
+
+              <!-- Significance annotations -->
+              <text x="260" y="130" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#BB0000">b = .34, p = .048</text>
+              <text x="260" y="230" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#5a5a5a">b = −.36, p = .063</text>
             </svg>
           </div>
         </div>
@@ -1322,38 +1319,52 @@
         </div>
         <div class="right">
           <div class="plot-wrap">
-            <div class="plot-title">Figure 6 · Experimental interaction (bar plot)</div>
-            <svg viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
-              <line x1="60" y1="40" x2="60" y2="260" stroke="#1a1a1a" stroke-width="1"/>
-              <line x1="60" y1="260" x2="440" y2="260" stroke="#1a1a1a" stroke-width="1"/>
-              <text x="50" y="265" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">0</text>
-              <text x="50" y="190" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">1</text>
-              <text x="50" y="115" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">2</text>
-              <text x="50" y="60" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#555">3</text>
-              <text x="20" y="155" font-family="Fraunces" font-style="italic" font-size="11" fill="#555" transform="rotate(-90 20 155)">Psychological Entitlement</text>
+            <div class="plot-title">Experimental interaction on entitlement</div>
+            <svg viewBox="0 0 480 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;">
+              <!-- Subtle horizontal gridlines at value 1, 2, 3 -->
+              <line x1="70" y1="105" x2="430" y2="105" stroke="#e2dccf" stroke-width="0.6" stroke-dasharray="3 3"/>
+              <line x1="70" y1="165" x2="430" y2="165" stroke="#e2dccf" stroke-width="0.6" stroke-dasharray="3 3"/>
+              <line x1="70" y1="225" x2="430" y2="225" stroke="#e2dccf" stroke-width="0.6" stroke-dasharray="3 3"/>
 
-              <!-- Control: low dom -->
-              <rect x="100" y="125" width="40" height="135" fill="#2a5d9c" opacity="0.85"/>
-              <!-- Control: high dom -->
-              <rect x="150" y="115" width="40" height="145" fill="#BB0000" opacity="0.85"/>
-              <text x="145" y="280" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#555">Control</text>
+              <!-- Axes -->
+              <line x1="70" y1="55" x2="70" y2="285" stroke="#1a1a1a" stroke-width="1.4"/>
+              <line x1="70" y1="285" x2="430" y2="285" stroke="#1a1a1a" stroke-width="1.4"/>
 
-              <!-- Empowerment: low dom -->
-              <rect x="300" y="135" width="40" height="125" fill="#2a5d9c" opacity="0.85"/>
-              <!-- Empowerment: high dom -->
-              <rect x="350" y="60" width="40" height="200" fill="#BB0000" opacity="0.85"/>
-              <text x="345" y="280" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#555">Empowerment</text>
+              <!-- Y-axis tick labels (0-3 scale) -->
+              <text x="62" y="289" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#4a4a4a">0</text>
+              <text x="62" y="229" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#4a4a4a">1</text>
+              <text x="62" y="169" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#4a4a4a">2</text>
+              <text x="62" y="109" text-anchor="end" font-family="JetBrains Mono" font-size="11" fill="#4a4a4a">3</text>
+              <line x1="67" y1="225" x2="73" y2="225" stroke="#1a1a1a"/>
+              <line x1="67" y1="165" x2="73" y2="165" stroke="#1a1a1a"/>
+              <line x1="67" y1="105" x2="73" y2="105" stroke="#1a1a1a"/>
 
-              <!-- legend -->
-              <rect x="290" y="40" width="12" height="12" fill="#2a5d9c" opacity="0.85"/>
-              <text x="308" y="50" font-family="Fraunces" font-size="11" font-style="italic" fill="#2a5d9c">Low Dom.</text>
-              <rect x="370" y="40" width="12" height="12" fill="#BB0000" opacity="0.85"/>
-              <text x="388" y="50" font-family="Fraunces" font-size="11" font-style="italic" fill="#BB0000">High Dom.</text>
+              <!-- Y-axis label rotated, centered at axis midpoint y=170 -->
+              <text x="24" y="170" text-anchor="middle" font-family="Fraunces" font-style="italic" font-size="15" font-weight="500" fill="#1a1a1a" transform="rotate(-90 24 170)">Psychological Entitlement</text>
 
-              <!-- annotation -->
-              <text x="370" y="55" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#BB0000"></text>
-              <text x="245" y="200" text-anchor="middle" font-family="Fraunces" font-size="11" font-style="italic" fill="#555">Simple slope (high dom.):</text>
-              <text x="245" y="215" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#BB0000">b = .50, p = .007</text>
+              <!-- Legend (top of plot area, well clear of bars) -->
+              <rect x="120" y="22" width="14" height="14" fill="#5a5a5a"/>
+              <text x="141" y="34" font-family="Fraunces" font-size="13" font-style="italic" font-weight="500" fill="#5a5a5a">Low Dominance</text>
+              <rect x="270" y="22" width="14" height="14" fill="#BB0000"/>
+              <text x="291" y="34" font-family="Fraunces" font-size="13" font-style="italic" font-weight="500" fill="#BB0000">High Dominance</text>
+
+              <!-- Bars (0 at y=285, 3 at y=105 → 60 px per unit) -->
+              <!-- Control Low (~1.85): top y=174 -->
+              <!-- Control High (~2.00): top y=165 -->
+              <!-- Empowerment Low (~1.65): top y=186 -->
+              <!-- Empowerment High (~2.55): top y=132 -->
+              <rect x="130" y="174" width="50" height="111" fill="#5a5a5a"/>
+              <rect x="190" y="165" width="50" height="120" fill="#BB0000"/>
+              <rect x="290" y="186" width="50" height="99" fill="#5a5a5a"/>
+              <rect x="350" y="132" width="50" height="153" fill="#BB0000"/>
+
+              <!-- Group labels below x-axis -->
+              <text x="185" y="305" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#4a4a4a">Control</text>
+              <text x="375" y="305" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#4a4a4a">Empowerment</text>
+
+              <!-- Footnote strip with simple slope, separated by rule -->
+              <line x1="70" y1="322" x2="430" y2="322" stroke="#e2dccf" stroke-width="0.8"/>
+              <text x="250" y="336" text-anchor="middle" font-family="Fraunces" font-size="12" font-style="italic" fill="#4a4a4a">Simple slope (high dom.): <tspan font-family="JetBrains Mono" font-style="normal" fill="#BB0000" font-weight="500">b = .50, p = .007</tspan></text>
             </svg>
           </div>
         </div>
